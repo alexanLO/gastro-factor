@@ -1,0 +1,116 @@
+@use 'lightcolors-variables' as *;
+@use 'darkcolors-variables' as *;
+@use 'typography-mixins' as *;
+@use 'spacings-variables' as *;
+@use 'borders-variables' as *;
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba($primary-container, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  span:first-child {
+    font-family: 'Material Symbols Outlined';
+    color: $on-surface-variant;
+    font-size: 1.5rem;
+    .group:hover & {
+      color: $primary-container;
+    }
+  }
+
+  span:last-child {
+    // Tipografia
+    @include label-md;
+
+    color: $on-surface-variant;
+
+    // Comportamento herdado do "group"
+    .group:hover & {
+      color: $on-surface;
+    }
+  }
+
+  .profile-image-container {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba($outline-variant, 0.3);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+aside {
+  background-color: rgba($surface-container-low, 0.9);
+  backdrop-filter: blur(16px);
+  color: $primary;
+  padding: 1rem;
+  padding-top: 2rem;
+  border-right: 1px solid rgba($outline-variant, 0.2);
+  z-index: 40;
+
+  // Tipografia
+  @include label-md;
+
+  // Layout
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 16rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .slogan-container {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    h1 {
+      @include display-lg;
+      @include headline-lg;
+      color: $primary;
+    }
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer {
+    margin-top: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
