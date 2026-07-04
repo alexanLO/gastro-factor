@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "3ab92f45-35ec-4e21-9b92-6480079e5f9d"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -29,9 +30,10 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/shared/styles"]
+            },
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
