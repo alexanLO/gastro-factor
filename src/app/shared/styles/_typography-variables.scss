@@ -1,0 +1,78 @@
+
+
+  // ── Typography Mixins ──────────────────────────────────────
+
+@mixin display-lg {
+  font-family: 'Newsreader', serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+}
+
+@mixin headline-lg {
+  font-family: 'Newsreader', serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+@mixin headline-lg-mobile {
+  font-family: 'Newsreader', serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+@mixin headline-md {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@mixin body-lg {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin body-md {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin label-md {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+}
+
+@mixin label-sm {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+// ── Border Radius Variables ─────────────────────────────────
+
+$rounded-sm:   0.125rem;
+$rounded:      0.25rem;
+$rounded-md:   0.375rem;
+$rounded-lg:   0.5rem;
+$rounded-xl:   0.75rem;
+$rounded-full: 9999px;
+
+// ── Spacing Variables ───────────────────────────────────────
+
+$spacing-base:      8px;
+$container-max:     1280px;
+$gutter:            24px;
+$margin-mobile:     16px;
+$margin-desktop:    40px;
