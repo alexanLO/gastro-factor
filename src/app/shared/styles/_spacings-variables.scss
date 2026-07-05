@@ -1,7 +1,11 @@
 // ── Spacing Variables ───────────────────────────────────────
 
-$spacing-base:      8px;
-$container-max:     1280px;
-$gutter:            24px;
-$margin-mobile:     16px;
-$margin-desktop:    40px;
+$spacing-base: 0.5rem; //8px
+$spacing-sm: 1rem; //16px
+$spacing-md: 1.5rem; //24px
+$spacing-lg: 2rem; //32px
+$spacing-xl: 2.5rem; //40px
+
+$container-max: 1280px;
+$container-min: 720px;
+$gutter: 1.5rem; //24px
