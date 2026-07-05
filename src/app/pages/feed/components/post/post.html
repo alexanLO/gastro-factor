@@ -1,0 +1,42 @@
+<article class="card">
+    <div class="card-container">
+        <img alt={{description}} src="/post-example.png" />
+
+        <div class="overlay"></div>
+        <div class="card-footer">
+            <h2 class="">{{recipeName}}</h2>
+            <span>{{recipeCategory}}</span>
+        </div>
+    </div>
+
+    <div class="card-info">
+        <div class="card-info-container">
+            <div>
+                <span class="material-symbols-outlined">restaurant_menu</span>
+                <span>Rendimento: {{perCapita}} percapita</span>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">timer</span>
+                <!-- TODO: verificar como deixar a Hora, Minutos, Segundos dinamico -->
+                <span>Preparo: {{preparationTime}}h</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-actions">
+        <div class="actions-container">
+            <button>
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="value">{{numberLikes}}</span>
+            </button>
+            <button>
+                <span class="material-symbols-outlined">mode_comment</span>
+                <span class="value">{{numberComments}}</span>
+            </button>
+            
+            <button class="button-share">
+                <span class="material-symbols-outlined">share</span>
+            </button>
+        </div>
+    </div>
+</article>

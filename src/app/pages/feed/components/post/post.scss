@@ -1,0 +1,138 @@
+@use 'lightcolors-variables' as *;
+@use 'darkcolors-variables' as *;
+@use 'typography-mixins' as *;
+@use 'spacings-variables' as *;
+@use 'borders-variables' as *;
+
+.card {
+  background-color: none; //TODO trocar a cor
+  border-radius: $rounded-xl;
+  overflow: hidden;
+  box-shadow: #000; //TODO trocar a cor
+  border: 1px solid #ffffff15; //TODO trocar a cor
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  //TODO group → usado para aplicar estilos em filhos quando o pai está em hover/active
+
+  .card-container {
+    height: 16rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+
+      transition: transform 0.7s ease;
+
+      .group:hover & {
+        transform: scale(1.05);
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, #2a2624, transparent, transparent); //TODO trocar cor
+      opacity: 0.8;
+    }
+
+    .card-footer {
+      position: absolute;
+      bottom: $margin-sm;
+      left: $margin-sm;
+      right: $margin-sm;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      h2 {
+        font-weight: 600;
+        @include headline-lg;
+        letter-spacing: -0.015em;
+        color: #fff; //TODO trocar a cor
+      }
+
+      span {
+        background-color: rgba($primary-container, 0.4);
+        color: $surface;
+        text-transform: uppercase;
+        font-weight: 4000;
+        padding: 0.25rem 0.5rem;
+        border-radius: $rounded-sm;
+        @include label-sm;
+        backdrop-filter: blur(4px);
+      }
+    }
+  }
+
+  .card-info {
+    padding: $spacing-sm;
+    background-color: rgba($surface-container-low, 0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba($outline-variant, 0.1);
+
+    .card-info-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $on-surface-variant;
+      @include label-md;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: $spacing-base;
+
+        span:first-child {
+          color: $primary-container;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .card-actions {
+    padding: $spacing-sm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba($outline-variant, 0.1);
+    background-color: rgba($surface-container-lowest, 0.3);
+
+    .actions-container {
+      display: flex;
+      align-items: center;
+      gap: $spacing-base;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: none;
+        border: none;
+        color: $on-surface-variant;
+        transition: color 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-container;
+        }
+
+        .value {
+          @include label-md;
+        }
+      }
+    }
+  }
+}
